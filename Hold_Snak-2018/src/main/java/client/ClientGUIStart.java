@@ -46,7 +46,7 @@ public class ClientGUIStart extends javax.swing.JFrame {
 
         jLabel1.setText("Ip:");
 
-        jTextFieldIp.setText("51.15.56.53");
+        jTextFieldIp.setText("viter.dk");
 
         jLabel2.setText("Port:");
 
