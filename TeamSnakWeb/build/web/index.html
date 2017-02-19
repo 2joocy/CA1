@@ -6,9 +6,9 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="extra/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="extra/jquery.min.js" type="text/javascript"></script>
+        <script src="extra/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body style="background-color: #F7F9F9;">
         <br />
@@ -44,15 +44,15 @@
                as their server. This would indicate that the task at hand wasn't 
                too diffucult, as it's a extension of previous assignments. 
                Guidance from the teacher, Jens, was supreme during the time. 
-               A group we were testing against at the time, had issues with their client. 
+               A group we were testing against at the time had issues with their client. 
                Jens helped them briefly, resulting in them clearing the tests.
                General help / discussion was planned out well by Jens.
             </p>
             <h4>Cons</h4>
             <p>
                 One major con, which became present at almost every of our tests, 
-                was the protocol. Alot of the groups did either not send out the right 
-                commands, or didn't recieve them as they're suppose to. This either resulted 
+                was the protocol. A lot of the groups did either not send out the right 
+                commands, or didn't recieve them as they were supposed to. This either resulted 
                 in painstakingly waiting for them to understand the protocol, or either 
                 ask for help, which took time. One major flaw we later discovered (Probs to Chris from the group for pointing this out), 
                 was that it's impossible to know who sent a private message to who. The user will recieve a message, 
@@ -61,11 +61,20 @@
                 However, what it should have been was: MSG#FROM USER#TO USER#MESSAGE TO USER. 
                 This ensures that we can alert the user.
             </p>
+            <h4>Who Did What</h4>
+            <p>
+                We all split out work, and prefer sharing screen or all working on the same class at the same time giving ideas and inputs.
+                It really makes it more fun and enjoyable for us, and doing it cooperatively gives us a lot of insight.
+                If we were to split it out (since it's a requirement) it would be something like this:<br>
+                Viktor: Linux Server/Web + Client GUI<br>
+                Chris: Client Software<br>
+                William: Server Software + Documentation
+            </p>
         <h3>Architecture</h3>
         <p>
             <h4>The Server</h4>
                 We based the architecture of the server on a previous TCP server that we wrote, called EchoServer / EchoClient. 
-                We understood the premise of TCP, so expanding the code was no issue. The server has a metod called startServer, 
+                We understood the premise of TCP, so expanding the code was no issue. The server has a method called startServer, 
                 which contains both a ServerSocket, aswell as a Socket. The ServerSockets job is to bind to a specific IP / Port, 
                 where it listens to incoming requests. The ServerSocket has a method called accept, which returns the incoming connection socket. 
                 Incase of a connection, the socket connection would not be null, whereas it would initiate the handleConnection to the incoming socket. 

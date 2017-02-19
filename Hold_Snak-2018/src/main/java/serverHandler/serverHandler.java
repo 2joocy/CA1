@@ -311,7 +311,7 @@ public class serverHandler extends Thread {
     public void run() {
         try {
             getTime();
-            startServer("10.50.130.19", 8081);
+            startServer("163.172.173.76", 8081);
         } catch (IOException ex) {
             Logger.getLogger(serverHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
