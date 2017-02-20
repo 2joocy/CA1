@@ -74,6 +74,7 @@
             <TitledBorder title="Chat Window"/>
           </Border>
         </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>

@@ -31,6 +31,7 @@ public class ClientGUI extends javax.swing.JFrame {
             e.printStackTrace();
         }
         initComponents();
+        jTextFieldMessage.requestFocus();
         jListUsers.setSelectionMode(DefaultListSelectionModel.SINGLE_SELECTION);
         setLocationRelativeTo(null);
     }
@@ -89,6 +90,7 @@ public class ClientGUI extends javax.swing.JFrame {
 
     public void readMessage(String receivedMsg) {
         jTextAreaChat.append(receivedMsg);
+        jTextAreaChat.setCaretPosition(jTextAreaChat.getDocument().getLength());
     }
 
     public void addUserToList(String s) {
@@ -126,7 +128,8 @@ public class ClientGUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jScrollPaneMain = new javax.swing.JScrollPane();
         jTextAreaChat = new javax.swing.JTextArea();
@@ -141,6 +144,7 @@ public class ClientGUI extends javax.swing.JFrame {
         setResizable(false);
 
         jScrollPaneMain.setBorder(javax.swing.BorderFactory.createTitledBorder("Chat Window"));
+        jScrollPaneMain.setAutoscrolls(true);
 
         jTextAreaChat.setEditable(false);
         jTextAreaChat.setColumns(20);
@@ -151,7 +155,8 @@ public class ClientGUI extends javax.swing.JFrame {
         jScrollPaneUsers.setBorder(javax.swing.BorderFactory.createTitledBorder("Send To"));
         jScrollPaneUsers.setToolTipText("");
 
-        jListUsers.setModel(new javax.swing.AbstractListModel<String>() {
+        jListUsers.setModel(new javax.swing.AbstractListModel<String>()
+        {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
@@ -159,15 +164,19 @@ public class ClientGUI extends javax.swing.JFrame {
         jListUsers.setSelectedIndex(0);
         jScrollPaneUsers.setViewportView(jListUsers);
 
-        jTextFieldMessage.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        jTextFieldMessage.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 jTextFieldMessageKeyPressed(evt);
             }
         });
 
         jButtonSend.setText("Send");
-        jButtonSend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButtonSend.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButtonSendActionPerformed(evt);
             }
         });

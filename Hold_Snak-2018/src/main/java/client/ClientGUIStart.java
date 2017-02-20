@@ -1,5 +1,6 @@
 package client;
 
+import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 
 public class ClientGUIStart extends javax.swing.JFrame {
@@ -15,12 +16,14 @@ public class ClientGUIStart extends javax.swing.JFrame {
         } catch (Exception e) {
         }
         initComponents();
+        jTextFieldName.requestFocus();
         setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jButtonConnect = new javax.swing.JButton();
@@ -38,8 +41,10 @@ public class ClientGUIStart extends javax.swing.JFrame {
 
         jButtonConnect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonConnect.setText("Connect");
-        jButtonConnect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButtonConnect.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButtonConnectActionPerformed(evt);
             }
         });
@@ -54,7 +59,13 @@ public class ClientGUIStart extends javax.swing.JFrame {
 
         jLabel3.setText("Name:");
 
-        jTextFieldName.setText("Test1");
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,6 +132,11 @@ public class ClientGUIStart extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConnectActionPerformed
+        connectToProgram();
+    }//GEN-LAST:event_jButtonConnectActionPerformed
+
+    private void connectToProgram()
+    {
         try {
             if (jTextFieldName.getText().contains("#")) {
                 JOptionPane.showMessageDialog(null, "Do not use # in your username, please!");
@@ -134,8 +150,12 @@ public class ClientGUIStart extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Please enter proper information!");
         }
-        
-    }//GEN-LAST:event_jButtonConnectActionPerformed
+    }
+    
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jTextFieldNameActionPerformed
+    {//GEN-HEADEREND:event_jTextFieldNameActionPerformed
+        connectToProgram();
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
 
     public static void main(String[] args) {
         ClientGUIStart guiStart = new ClientGUIStart();
