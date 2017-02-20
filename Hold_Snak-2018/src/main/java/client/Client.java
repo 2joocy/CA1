@@ -130,6 +130,7 @@ public class Client {
                 case "UPDATE":
                     if (!split[1].equals(name)) {
                         gui.addUserToList(split[1]);
+                        gui.readMessage(split[1] + " has connected." + System.lineSeparator());
                     }
                     break;
                     

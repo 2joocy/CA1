@@ -87,7 +87,7 @@ public class ClientGUI extends javax.swing.JFrame {
         client.setLastPerson(receiver);
         return msg;
     }
-
+    
     public void readMessage(String receivedMsg) {
         jTextAreaChat.append(receivedMsg);
         jTextAreaChat.setCaretPosition(jTextAreaChat.getDocument().getLength());
